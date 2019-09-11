@@ -12,25 +12,24 @@ function App() {
   }
 ]);
 
-const initialTeamMember = {name: "Michael Scott", email: "michaelscarn@dundermifflin.com", role: "Front-End Engineer"}
-const [newTeamMember, setNewTeamMember] = useState(initialTeamMember)
-
 
 const handleSubmit = event => {
   event.preventDefault();
-  setTeamMembers([ teamMembers, setTeamMembers])
+  setTeamMembers({...teamMembers, [event.target.name]:event.target.value})
   setTeamMembers({name: '', email:'', role:'Front-End Engineer'})
   console.log(teamMembers)
 }
 
 const handleUpdate = event =>{
-  setNewTeamMember({...newTeamMember, [event.target.name]: event.target.value});
+  event.preventDefault();
+  setTeamMembers({...teamMembers, [event.target.name]: event.target.value});
+  console.log(teamMembers)
 }
 
   return (
     <div className="App">
 
-      <TeamForm handleSubmit={handleSubmit} handleUpdate ={handleUpdate} teamMembers={teamMembers} setTeamMembers={setTeamMembers} newTeamMember={newTeamMember} setNewTeamMember={setNewTeamMember}/>
+      <TeamForm handleSubmit={handleSubmit} handleUpdate ={handleUpdate} teamMembers={teamMembers} setTeamMembers={setTeamMembers}/>
 
       <TeamMember teamMembers={teamMembers} />
     </div>

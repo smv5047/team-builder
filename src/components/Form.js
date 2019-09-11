@@ -15,14 +15,14 @@ const teamMembers = props.teamMembers
                     type="text" 
                     name ="name" 
                     placeholder="Your Name Here"
-                    value={props.newTeamMember.name}
+                    value={props.teamMembers.name}
                     onChange={(event)=> props.handleUpdate(event)}></input>
             </label>
             <label>Email
-                <input type="email" name="email" value={props.newTeamMember.email} placeholder="Enter Your Email" onChange={(event)=> props.handleUpdate(event)}></input>
+                <input type="email" name="email" value={props.teamMembers.email} placeholder="Enter Your Email" onChange={(event)=> props.handleUpdate(event)}></input>
             </label>
             <label>Role
-                <select type="select" value={props.newTeamMember.value} name="role" onChange={(event)=> props.handleUpdate(event)}>
+                <select type="select" value={props.teamMembers.value} name="role" onChange={(event)=> props.handleUpdate(event)}>
                     <option value="Front-End Engineer">Front-End Engineer</option>
                     <option value="Back-End Engineer">Back-End Engineer</option>
                     <option value="Designer">Designer</option>
